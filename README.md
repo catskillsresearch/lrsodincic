@@ -26,6 +26,7 @@ and was split out because it is not part of that project's intent. See
 | `PROVENANCE.md` | Split from `scott_models/LRSODInCIC`; this repo is the continuation |
 | `LRSODInCIC.pdf` | Built paper (committed deliverable) |
 | `build_pdf.py` | `LRSODInCIC.md` → `LRSODInCIC.tex` → `LRSODInCIC.pdf`, Lean source inlined as an appendix |
+| `scripts/package_arxiv_submit.sh` | `dist/arxiv_submit.zip` for arXiv (pdfLaTeX + Lean listing) |
 | `scripts/tex_preamble_arxiv.tex` | Listings / unicode preamble used by the PDF build |
 | `LICENSE` | Apache License 2.0 |
 | `NOTICE` | Copyright and third-party attribution |
@@ -52,7 +53,13 @@ Needs `pandoc` and `latexmk`.
 
 ```bash
 python3 build_pdf.py
+bash scripts/package_arxiv_submit.sh   # dist/arxiv_submit.zip (rebuilds the PDF first)
 ```
+
+`dist/arxiv_submit.zip` is the arXiv upload: `LRSODInCIC.tex`, `LRSODInCIC.lean`
+(the `\lstinputlisting` appendix), and `00README.json` so AutoTeX keeps the Lean
+file and compiles with pdfLaTeX. On arXiv Add Files, Delete All before
+uploading; on Review Files, uncheck deletion if `LRSODInCIC.lean` is marked.
 
 ## License
 

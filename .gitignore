@@ -8,6 +8,10 @@ __pycache__/
 # Generated TeX (the PDF is the committed deliverable)
 LRSODInCIC.tex
 
+# arXiv submission bundle (scripts/package_arxiv_submit.sh)
+dist/
+00README.json
+
 # LaTeX build artifacts
 *.aux
 *.log
