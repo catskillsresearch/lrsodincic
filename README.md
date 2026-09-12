@@ -24,7 +24,8 @@ and was split out because it is not part of that project's intent. See
 | `LRSODInCIC.md` | Paper (axioms, CIC, translation) — the source of truth |
 | `LRSODInCIC.lean` | Deep embedding, plus a Sierpiński-space witness for D1–D4 |
 | `PROVENANCE.md` | Split from `scott_models/LRSODInCIC`; this repo is the continuation |
-| `LRSODInCIC.pdf` | Built paper (committed deliverable) |
+| `LRSODInCIC.pdf` | Paper PDF (committed deliverable; synced from `view.pdf`) |
+| `view.pdf` | Official arXiv AutoTeX build (pdfLaTeX) |
 | `build_pdf.py` | `LRSODInCIC.md` → `LRSODInCIC.tex` → `LRSODInCIC.pdf`, Lean source inlined as an appendix |
 | `scripts/package_arxiv_submit.sh` | `dist/arxiv_submit.zip` for arXiv (pdfLaTeX + Lean listing) |
 | `scripts/tex_preamble_arxiv.tex` | Listings / unicode preamble used by the PDF build |
@@ -60,6 +61,8 @@ bash scripts/package_arxiv_submit.sh   # dist/arxiv_submit.zip (rebuilds the PDF
 (the `\lstinputlisting` appendix), and `00README.json` so AutoTeX keeps the Lean
 file and compiles with pdfLaTeX. On arXiv Add Files, Delete All before
 uploading; on Review Files, uncheck deletion if `LRSODInCIC.lean` is marked.
+After a successful arXiv compile, save the preview PDF as `view.pdf` and copy it
+to `LRSODInCIC.pdf` so the committed deliverable matches AutoTeX.
 
 ## License
 
